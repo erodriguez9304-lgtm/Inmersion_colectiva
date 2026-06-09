@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" width="100%" height="100%">
+  <defs>
+    <!-- Gradiente corporativo idéntico al logotipo principal -->
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#0D9488" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo sutilmente blanco/traslúcido para asegurar visibilidad en modo oscuro del navegador -->
+  <circle cx="55" cy="55" r="52" fill="#FFFFFF" opacity="0.9"/>
+
+  <!-- Círculos de Inmersión Colectiva -->
+  <circle cx="55" cy="55" r="48" fill="none" stroke="#E2E8F0" stroke-width="2.5"/>
+  <circle cx="55" cy="55" r="40" fill="none" stroke="url(#favGrad)" stroke-width="2.5" stroke-dasharray="5 4"/>
+  
+  <!-- Símbolo Psi (Ψ) de Psicología Clínica -->
+  <path d="M 55 22 L 55 83 M 35 38 C 35 72 75 72 75 38 M 43 83 L 67 83" 
+        fill="none" stroke="url(#favGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
