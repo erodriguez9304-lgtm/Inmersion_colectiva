@@ -60,6 +60,37 @@ body {
   gap: 1rem;
 }
 
+/* Logotipo del cliente: icono de manos+Ψ + texto + sello circular del eclipse */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-icon {
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.logo-icon-hands,
+.logo-icon-eclipse {
+  width: 46px;
+  height: 46px;
+}
+
+.logo-text-terapia {
+  font-weight: 700;
+  font-size: 0.78rem;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #0d9488, #4f7cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
 .nav-link {
   margin-left: 1.5rem;
   text-decoration: none;
@@ -94,6 +125,14 @@ body {
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
+}
+
+.hero-slogan {
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
 }
 
 .hero-text h1 {
@@ -200,6 +239,24 @@ body {
   height: auto;
 }
 
+/* Panel de marca temporal mientras no hay fotos reales del consultorio */
+.hero-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+}
+
+.hero-image-placeholder img {
+  width: 55%;
+  max-width: 260px;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
 /* Galería */
 .gallery {
   padding: 4rem 0;
@@ -266,6 +323,62 @@ body {
 .product-card-landing h3 {
   margin-bottom: 0.5rem;
   color: var(--primary);
+}
+
+.product-card-mas {
+  background: var(--gray-100);
+  border: 1.5px dashed var(--secondary);
+  box-shadow: none;
+}
+
+/* ¿Cómo es el proceso? */
+.process-section {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.process-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.process-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.process-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.process-card p {
+  color: var(--gray-700);
+  font-size: 0.92rem;
+}
+
+/* Blog y Noticias */
+.blog-section {
+  padding: 3rem 0 4rem;
+  background: var(--gray-100);
+}
+
+.blog-placeholder {
+  text-align: center;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  color: var(--gray-700);
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 /* Ubicación */
@@ -353,11 +466,22 @@ body {
   padding: 2rem 0 1rem;
 }
 
-.landing-footer .logo-footer {
-  filter: brightness(0) invert(1);
-  max-width: 160px;
-  height: auto;
-  margin-bottom: 0.5rem;
+.footer-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-logo-lockup .logo-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.footer-credential {
+  font-size: 0.8rem;
+  color: var(--gray-700);
+  margin-top: 0.5rem;
 }
 
 .footer-grid {

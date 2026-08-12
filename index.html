@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Inmersión Colectiva | Terapia Psicológica y Clínica</title>
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <meta name="description" content="Espacio terapéutico especializado en salud mental y psicología clínica. Consulta presencial y online de forma segura y confidencial.">
-  <meta name="keywords" content="terapia psicologica, psicologo clinico, salud mental, ansiedad, psicoterapia">
+  <title>Inmersión Colectiva | Terapia Psicológica</title>
+  <link rel="icon" type="image/png" href="assets/img/logo-terapia-psicologica.png">
+  <meta name="description" content="Atrévete a experimentar la verdadera libertad. Espacio dirigido a la psicología, con acompañamiento seguro, profesional, confidencial y adaptable a tus objetivos.">
+  <meta name="keywords" content="terapia psicologica, psicologo clinico, salud mental, terapia de pareja, terapia individual, Tultitlán">
   <meta name="author" content="Inmersión Colectiva">
   
   <!-- Preconnect para fuentes y Google Maps -->
@@ -22,30 +22,18 @@
   <!-- Header fijo con logo y navegación mínima -->
   <header class="landing-header">
     <div class="container header-flex">
-      <!-- Logotipo SVG integrado directamente para optimización -->
-      <div class="logo-container" style="max-width: 260px; height: auto;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 140" width="100%" height="100%">
-          <defs>
-              <linearGradient id="clinicaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#1E3A8A" />
-                  <stop offset="100%" stop-color="#0D9488" />
-              </linearGradient>
-          </defs>
-          <g transform="translate(20, 15)">
-              <circle cx="55" cy="55" r="48" fill="none" stroke="#E2E8F0" stroke-width="2"/>
-              <circle cx="55" cy="55" r="40" fill="none" stroke="url(#clinicaGrad)" stroke-width="1.5" stroke-dasharray="5 4"/>
-              <path d="M 55 22 L 55 83 M 35 38 C 35 72 75 72 75 38 M 43 83 L 67 83" fill="none" stroke="url(#clinicaGrad)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </g>
-          <g transform="translate(145, 0)">
-              <text x="0" y="62" font-family="'Inter', sans-serif" font-size="34" font-weight="700" fill="#1E293B" letter-spacing="1.5">INMERSIÓN COLECTIVA</text>
-              <text x="3" y="94" font-family="'Inter', sans-serif" font-size="16" font-weight="600" fill="#0D9488" letter-spacing="7.5">TERAPIA PSICOLÓGICA</text>
-          </g>
-        </svg>
+      <!-- Logotipo del cliente: icono de manos+Ψ, texto "TERAPIA PSICOLÓGICA" y sello circular "Inmersión Colectiva" -->
+      <div class="logo-container">
+        <img src="assets/img/logo-terapia-psicologica.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-hands">
+        <span class="logo-text-terapia">TERAPIA<br>PSICOLÓGICA</span>
+        <img src="assets/img/logo-inmersion-colectiva.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-eclipse">
       </div>
       <nav>
         <a href="#inicio" class="nav-link">Inicio</a>
         <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#proceso" class="nav-link">Proceso</a>
         <a href="#ubicacion" class="nav-link">Ubicación</a>
+        <a href="#blog" class="nav-link">Blog</a>
         <a href="#contacto" class="nav-link">Contacto</a>
       </nav>
     </div>
@@ -57,16 +45,17 @@
       <div class="container hero-grid">
         <div class="hero-text">
           <span class="hero-badge">Ψ Consulta Clínica Especializada</span>
+          <p class="hero-slogan">"Atrévete a experimentar la verdadera libertad"</p>
           <h1>Un espacio seguro para tu <span class="highlight">bienestar emocional</span></h1>
-          <p>Terapia psicológica diseñada para ayudarte a procesar, entender y transformar tus momentos de crisis o crecimiento personal de forma confidencial.</p>
-          
+          <p>Un espacio dirigido a la psicología, en el que te acompañaremos de principio a fin en todas esas etapas difíciles de la vida, siguiendo métodos comprobados y adaptándonos a tus objetivos.</p>
+
           <div class="hero-buttons">
             <!-- Botón de WhatsApp Incrustado -->
-            <a href="https://wa.me/5215500000000?text=Hola,%20quiero%20agendar%20una%20sesión%20psicológica%20inicial." class="btn btn-primary" target="_blank">
+            <a href="https://wa.me/525625572365?text=Hola,%20quiero%20agendar%20una%20sesión%20psicológica%20inicial." class="btn btn-primary" target="_blank">
               📲 Agendar por WhatsApp
             </a>
             <!-- Botón de Llamada Incrustado -->
-            <a href="tel:5500000000" class="btn btn-secondary" style="background:#1e3a8a;">
+            <a href="tel:+525625572365" class="btn btn-secondary" style="background:#1e3a8a;">
               📞 Llamar ahora
             </a>
             <a href="#servicios" class="btn btn-secondary" style="background:#0d9488;">Ver enfoques →</a>
@@ -74,42 +63,52 @@
 
           <!-- Redes Sociales Incrustadas en Hero -->
           <div class="social-hero-buttons" style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <a href="https://facebook.com" class="btn btn-social btn-fb" target="_blank">📘 Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=100068959985123" class="btn btn-social btn-fb" target="_blank">📘 Facebook</a>
             <a href="https://instagram.com" class="btn btn-social btn-ig" target="_blank">📸 Instagram</a>
           </div>
 
           <div class="trust-badges">
-            <span>✅ Absoluta Confidencialidad</span>
-            <span>⚡ Atención en Crisis</span>
-            <span>🧠 Profesionales Titulados</span>
+            <span>🛡️ Seguro</span>
+            <span>🎓 Profesional</span>
+            <span>🔒 Confidencial</span>
+            <span>🔄 Adaptable</span>
           </div>
         </div>
-        <div class="hero-image">
-          <!-- Placeholder de imagen clínica/consultorio -->
-          <img src="assets/img/consultorio-hero.jpg" alt="Inmersión Colectiva Consultorio Seguro" loading="eager">
+        <div class="hero-image hero-image-placeholder">
+          <!-- Sin fotos reales del consultorio todavía: panel de marca en lo que se agregan -->
+          <img src="assets/img/logo-terapia-psicologica.png" alt="Inmersión Colectiva Consultorio Seguro" loading="eager">
         </div>
       </div>
     </section>
 
-    <!-- Galería del espacio (fotos reales del consultorio) -->
+    <!-- Galería del espacio: desactivada hasta contar con fotos reales del consultorio
+         (los archivos assets/img/consultorio-*.jpg referenciados en app.js todavía no existen).
+         Para reactivarla, quita este comentario y sube las fotos con esos mismos nombres. -->
+    <!--
     <section class="gallery">
       <div class="container">
         <h2 class="section-title">📸 Nuestro Espacio Terapéutico</h2>
         <div class="gallery-grid" id="galleryGrid">
-          <!-- Se llena dinámicamente con JS -->
+          <!- Se llena dinámicamente con JS ->
         </div>
       </div>
     </section>
+    -->
 
     <!-- Sección de Servicios destacados -->
     <section id="servicios" class="products-showcase">
       <div class="container">
-        <h2 class="section-title">Ψ Modalidades de Intervención Clínica</h2>
+        <h2 class="section-title">Ψ Modalidades de Intervención</h2>
         <div class="products-grid-landing">
           <div class="product-card-landing">
             <div class="product-icon">🧠</div>
             <h3>Terapia Individual</h3>
-            <p>Manejo de ansiedad, depresión, estrés agudo y procesos profundos de autoconocimiento.</p>
+            <p>Acompañamiento personal para procesar, entender y transformar tus momentos de crisis o crecimiento.</p>
+          </div>
+          <div class="product-card-landing">
+            <div class="product-icon">📚</div>
+            <h3>Terapia de Aprendizaje</h3>
+            <p>Herramientas y estrategias para dificultades y procesos de aprendizaje.</p>
           </div>
           <div class="product-card-landing">
             <div class="product-icon">👥</div>
@@ -117,31 +116,60 @@
             <p>Resolución de conflictos, reestructuración de la comunicación y acuerdos saludables.</p>
           </div>
           <div class="product-card-landing">
-            <div class="product-icon">🌱</div>
-            <h3>Acompañamiento Psicológico</h3>
-            <p>Intervención profesional ante duelos, pérdidas y transiciones complejas de vida.</p>
+            <div class="product-icon">🧩</div>
+            <h3>Terapia para Neurodivergencias</h3>
+            <p>Atención adaptada a las necesidades de personas neurodivergentes.</p>
           </div>
-          <div class="product-card-landing">
-            <div class="product-icon">🏫</div>
-            <h3>Terapia de Adolescentes</h3>
-            <p>Orientación emocional y herramientas conductuales para etapas de transición y desarrollo.</p>
-          </div>
-          <div class="product-card-landing">
-            <div class="product-icon">💼</div>
-            <h3>Desarrollo del Potencial</h3>
-            <p>Consultoría enfocada en dinámicas conductuales y equilibrio de entornos personales.</p>
-          </div>
-          <div class="product-card-landing">
-            <div class="product-icon">🌐</div>
-            <h3>Consulta Online Seguro</h3>
-            <p>Atención remota mediante plataformas encriptadas con la misma rigurosidad clínica.</p>
+          <div class="product-card-landing product-card-mas">
+            <div class="product-icon">✨</div>
+            <h3>Y mucho más</h3>
+            <p>Consulta por WhatsApp para conocer el resto de las modalidades disponibles.</p>
           </div>
         </div>
         <div class="text-center" style="margin-top: 2rem;">
           <!-- Botón Incrustado secundario para WhatsApp -->
-          <a href="https://wa.me/5215500000000?text=Hola,%20necesito%20información%20sobre%20costos%20y%20horarios%20disponibles." class="btn btn-outline" target="_blank">
+          <a href="https://wa.me/525625572365?text=Hola,%20necesito%20información%20sobre%20costos%20y%20horarios%20disponibles." class="btn btn-outline" target="_blank">
             📋 Consultar horarios y costos por WhatsApp
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿Cómo es el proceso? -->
+    <section id="proceso" class="process-section">
+      <div class="container">
+        <h2 class="section-title">¿Cómo es el proceso?</h2>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-icon">🗓️</div>
+            <h3>Sesiones semanales</h3>
+            <p>Aproximadamente 1 hora por sesión (podría llegar a ser un poco más).</p>
+          </div>
+          <div class="process-card">
+            <div class="process-icon">💬</div>
+            <h3>Costo personalizado</h3>
+            <p>Se define en base a un estudio socioeconómico, mediante una llamada de aprox. 15 a 20 min.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-icon">🌐</div>
+            <h3>Presencial o en línea</h3>
+            <p>Casos excepcionales de terapia a domicilio: pregunta por disponibilidad.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-icon">🔀</div>
+            <h3>Metodología ecléctica</h3>
+            <p>Adaptada a tu necesidad particular, combinando distintos enfoques comprobados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog y Noticias -->
+    <section id="blog" class="blog-section">
+      <div class="container">
+        <h2 class="section-title">📰 Blog y Noticias</h2>
+        <div class="blog-placeholder">
+          <p>Muy pronto compartiremos artículos y noticias sobre salud mental en este espacio.</p>
         </div>
       </div>
     </section>
@@ -155,33 +183,30 @@
           <div class="location-info">
             <div class="address-card">
               <p><strong>Dirección del Consultorio:</strong><br>
-              [Inferencia] Av. Principal Clínica #123, Consultorio B, Zona Centro, Ciudad de México, CDMX</p>
-              <p><strong>Referencia de Acceso:</strong> Estacionamiento disponible y accesibilidad universal.</p>
+              Av. de las Torres 35, Colonia Ciudad Labor, Tultitlán, Edo. Méx.</p>
               <p><strong>Horario de Consultas:</strong><br>
               Lunes a Viernes: 8:00 am - 8:00 pm<br>
               Sábados: 9:00 am - 2:00 pm<br>
               Domingo: Previa programación urgente</p>
               <p><strong>📞 Canales Directos:</strong><br>
-              📱 Teléfono Principal: 55 0000 0000<br>
-              📱 WhatsApp de Guardia: 55 0000 0000</p>
-              <a href="https://maps.google.com/?q=Inmersión+Colectiva+Terapia+Psicológica" class="btn btn-small" target="_blank">🗺️ Ver en Google Maps</a>
-              <p style="margin-top: 0.5rem;">
-                <span style="background:#e8f5e9; padding:2px 8px; border-radius:20px; font-size:12px;">
-                  ✅ Espacio Clínico Verificado
-                </span>
-              </p>
+              📱 Teléfono: 56 2557 2365<br>
+              💬 <a href="https://wa.me/525625572365" target="_blank">WhatsApp directo</a></p>
+              <p><strong>Responsable:</strong><br>
+              Lic. Josué Christopher Enriquez Licea<br>
+              Céd. Prof. 14058083</p>
+              <a href="https://maps.app.goo.gl/Nt8LB7651RZW3hwRA" class="btn btn-small" target="_blank">🗺️ Ver en Google Maps</a>
             </div>
           </div>
-          
+
           <div class="location-map">
-              <!-- Reemplazar el src con el link de embed del consultorio real cuando se requiera -->
-              <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.545892429815!2d-99.16727!3d19.43256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzU3LjIiTiA5OcKwMTAnMDEuOCJX!5e0!3m2!1ses!2smx!4v1780702626107!5m2!1ses!2smx" 
-                  width="100%" 
-                  height="400" 
-                  style="border:0; border-radius: 1rem;" 
-                  allowfullscreen="" 
-                  loading="lazy" 
+              <!-- Embed genérico por dirección (sin pb= exacto todavía); reemplazar por el embed oficial del consultorio cuando el cliente lo comparta -->
+              <iframe
+                  src="https://www.google.com/maps?q=Av.+de+las+Torres+35%2C+Colonia+Ciudad+Labor%2C+Tultitl%C3%A1n%2C+Edo.+M%C3%A9x.&output=embed"
+                  width="100%"
+                  height="400"
+                  style="border:0; border-radius: 1rem;"
+                  allowfullscreen=""
+                  loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade">
               </iframe>
           </div>
@@ -196,13 +221,13 @@
         <p>Escríbenos directamente para asignarte un espacio prioritario con total confidencialidad.</p>
         
         <!-- Botón WA Largo Incrustado -->
-        <a href="https://wa.me/5215500000000?text=Hola,%20necesito%20coordinar%20una%20atención%20psicológica%20urgente." class="btn btn-wa-large" target="_blank">
-          💬 ¡Iniciar Conversación por WhatsApp de Guardia!
+        <a href="https://wa.me/525625572365?text=Hola,%20necesito%20coordinar%20una%20atención%20psicológica%20urgente." class="btn btn-wa-large" target="_blank">
+          💬 ¡Iniciar Conversación por WhatsApp!
         </a>
 
         <!-- Botones Redes Sociales Secundarias -->
         <div class="social-footer-buttons" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
-          <a href="https://facebook.com" class="btn btn-outline" style="color: white; border-color: white;" target="_blank">📘 Seguir en Facebook</a>
+          <a href="https://www.facebook.com/profile.php?id=100068959985123" class="btn btn-outline" style="color: white; border-color: white;" target="_blank">📘 Seguir en Facebook</a>
           <a href="https://instagram.com" class="btn btn-outline" style="color: white; border-color: white;" target="_blank">📸 Seguir en Instagram</a>
         </div>
       </div>
@@ -212,21 +237,26 @@
   <footer class="landing-footer">
     <div class="container footer-grid">
       <div>
-		<img src="assets/img/logo.svg" alt="Terapia Psicológica" width="180" class="logo-footer">
-        <!-- <h4 style="color: var(--white); margin-bottom: 0.5rem;">Inmersión Colectiva</h4> -->
+        <div class="footer-logo-lockup">
+          <img src="assets/img/logo-terapia-psicologica.png" alt="Terapia Psicológica" class="logo-icon logo-icon-hands">
+          <img src="assets/img/logo-inmersion-colectiva.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-eclipse">
+        </div>
         <p>Acompañamiento profesional y ético para tu salud mental.</p>
+        <p class="footer-credential">Lic. Josué Christopher Enriquez Licea &middot; Céd. Prof. 14058083</p>
       </div>
       <div>
         <h4>Enlaces de Navegación</h4>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Servicios Clínicos</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contacto de Guardia</h4>
-        <p>📞 Central: 55 0000 0000<br>📱 Urgencias: 55 0000 0000<br>✉️ contacto@inmersioncolectiva.com</p>
+        <h4>Contacto</h4>
+        <p>📞 Teléfono: 56 2557 2365<br>💬 <a href="https://wa.me/525625572365" target="_blank">WhatsApp</a><br>✉️ contacto@inmersioncolectiva.com</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -235,7 +265,7 @@
   </footer>
 
   <!-- Botón Flotante de WhatsApp -->
-  <a href="https://wa.me/5215500000000?text=Hola,%20vi%20la%20página%20de%20Inmersión%20Colectiva%20y%20me%20gustaría%20solicitar%20información." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <a href="https://wa.me/525625572365?text=Hola,%20vi%20la%20página%20de%20Inmersión%20Colectiva%20y%20me%20gustaría%20solicitar%20información." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
   
