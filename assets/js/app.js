@@ -90,7 +90,20 @@ const texts = {
       serviciosClinicos: "Servicios Clínicos",
       contactoTitle: "Contacto",
       telefono: "📞 Teléfono: 56 2557 2365",
-      rights: "© 2026 Inmersión Colectiva - Terapia Psicológica. Todos los derechos reservados."
+      rights: "© 2026 Inmersión Colectiva - Terapia Psicológica. Todos los derechos reservados.",
+      avisoPrivacidad: "Aviso de privacidad"
+    },
+    privacy: {
+      title: "Aviso de Privacidad",
+      responsable: '<strong>Responsable:</strong> Inmersión Colectiva (Lic. Josué Christopher Enriquez Licea, Céd. Prof. 14058083), con consultorio en Av. de las Torres 35, Colonia Ciudad Labor, Tultitlán, Estado de México.',
+      datosTitle: "Datos que recabamos",
+      datosText: "Cuando agendas una sesión o nos contactas por WhatsApp, llamada o correo electrónico, podemos recibir tu nombre, número telefónico, correo electrónico y datos generales de contacto. Durante el proceso terapéutico, y únicamente con tu consentimiento expreso, también podemos recabar datos sensibles relacionados con tu salud física y mental, necesarios para brindarte una atención psicológica adecuada.",
+      finalidadTitle: "Finalidad",
+      finalidadText: "Usamos tus datos para agendar y dar seguimiento a tus sesiones, mantener tu expediente clínico y contactarte sobre tu proceso terapéutico. Tus datos de salud están protegidos por el secreto profesional y no se comparten con terceros, salvo obligación legal.",
+      arcoTitle: "Derechos ARCO",
+      arcoText: 'Puedes solicitar acceder, rectificar, cancelar u oponerte al uso de tus datos personales, incluyendo tu expediente clínico, escribiendo a <a href="mailto:contacto@inmersioncolectiva.com">contacto@inmersioncolectiva.com</a>.',
+      cambiosTitle: "Cambios a este aviso",
+      cambiosText: "Este aviso puede actualizarse; la versión vigente siempre estará disponible en esta página."
     },
     theme: {
       light: "Claro",
@@ -180,7 +193,20 @@ const texts = {
       serviciosClinicos: "Clinical Services",
       contactoTitle: "Contact",
       telefono: "📞 Phone: 56 2557 2365",
-      rights: "© 2026 Inmersión Colectiva - Psychological Therapy. All rights reserved."
+      rights: "© 2026 Inmersión Colectiva - Psychological Therapy. All rights reserved.",
+      avisoPrivacidad: "Privacy notice"
+    },
+    privacy: {
+      title: "Privacy Notice",
+      responsable: '<strong>Data controller:</strong> Inmersión Colectiva (Lic. Josué Christopher Enriquez Licea, License No. 14058083), located at Av. de las Torres 35, Colonia Ciudad Labor, Tultitlán, State of Mexico.',
+      datosTitle: "Data we collect",
+      datosText: "When you book a session or contact us via WhatsApp, phone call or email, we may receive your name, phone number, email address and general contact details. During the therapeutic process, and only with your express consent, we may also collect sensitive data related to your physical and mental health, necessary to provide you with appropriate psychological care.",
+      finalidadTitle: "Purpose",
+      finalidadText: "We use your data to schedule and follow up on your sessions, maintain your clinical record, and contact you about your therapeutic process. Your health data is protected by professional confidentiality and is not shared with third parties, except where legally required.",
+      arcoTitle: "Data rights",
+      arcoText: 'You can request to access, rectify, cancel or object to the use of your personal data, including your clinical record, by writing to <a href="mailto:contacto@inmersioncolectiva.com">contacto@inmersioncolectiva.com</a>.',
+      cambiosTitle: "Changes to this notice",
+      cambiosText: "This notice may be updated; the current version will always be available on this page."
     },
     theme: {
       light: "Light",
@@ -323,9 +349,66 @@ function initTheme() {
   }
 }
 
+/* ==========================================================
+   2. MENÚ MÓVIL
+   ========================================================== */
+function initMobileNav() {
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  links.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+/* ==========================================================
+   3. MODAL DE AVISO DE PRIVACIDAD
+   ========================================================== */
+function initPrivacyModal() {
+  const privacyModal = document.getElementById('privacyModal');
+  const openPrivacyBtn = document.getElementById('openPrivacyModal');
+  const closePrivacyBtn = document.getElementById('closePrivacyModal');
+  if (!privacyModal || !closePrivacyBtn) return;
+
+  let lastFocusedBeforePrivacy = null;
+
+  function openPrivacyModal() {
+    lastFocusedBeforePrivacy = document.activeElement;
+    privacyModal.style.display = 'flex';
+    closePrivacyBtn.focus();
+  }
+
+  function closePrivacyModal() {
+    privacyModal.style.display = 'none';
+    if (lastFocusedBeforePrivacy) lastFocusedBeforePrivacy.focus();
+  }
+
+  if (openPrivacyBtn) openPrivacyBtn.addEventListener('click', openPrivacyModal);
+  closePrivacyBtn.addEventListener('click', closePrivacyModal);
+  privacyModal.addEventListener('click', (e) => {
+    if (e.target === privacyModal) closePrivacyModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && privacyModal.style.display === 'flex') {
+      closePrivacyModal();
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLang();
+  initMobileNav();
+  initPrivacyModal();
 
   // Renderizar galería de fotos de forma dinámica en el grid
   // (actualmente desactivada en el HTML hasta que existan fotos reales)

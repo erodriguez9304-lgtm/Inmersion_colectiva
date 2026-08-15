@@ -131,8 +131,14 @@ body {
 nav {
   display: flex;
   align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.25rem;
+  list-style: none;
 }
 
 .nav-link {
@@ -145,6 +151,50 @@ nav {
 
 .nav-link:hover {
   color: var(--secondary);
+}
+
+/* Botón hamburguesa (solo visible en móvil) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-toggle:hover {
+  border-color: var(--secondary);
+}
+
+.nav-toggle[aria-expanded="true"] {
+  border-color: var(--secondary);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Selector de idioma */
@@ -677,14 +727,36 @@ nav {
   .hero-text h1 {
     font-size: 2rem;
   }
-  .header-flex {
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-links {
+    position: fixed;
+    top: 78px;
+    left: 0;
+    right: 0;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 24px 20px;
+    transform: translateY(-140%);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
+    z-index: 999;
   }
+  .nav-links.is-open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .nav-links li { width: 100%; padding: 8px 0; }
   .nav-link {
-    margin: 0 0.75rem;
+    margin-left: 0;
   }
-  .lang-selector {
-    margin-left: 0.75rem;
+  .lang-selector,
+  .theme-selector {
+    margin-left: 0;
   }
   .hero {
     padding: 2rem 0;
@@ -768,4 +840,85 @@ nav {
 @media (max-width: 700px) {
   .lightbox .prev, .lightbox .next { padding: 0.5rem; font-size: 20px; }
   .lightbox .close-lightbox { top: 10px; right: 15px; font-size: 30px; }
+}
+
+/* Botón de aviso de privacidad en el footer */
+.footer-bottom .link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--footer-text);
+  text-decoration: underline;
+  font: inherit;
+  cursor: pointer;
+}
+
+.footer-bottom .link-button:hover {
+  color: var(--secondary);
+}
+
+/* Modal de Aviso de Privacidad */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.6);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal-box {
+  position: relative;
+  background: var(--bg-surface);
+  border-radius: var(--radius);
+  max-width: 620px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2.5rem 2rem 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-box h2 {
+  color: var(--primary-text);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-body h3 {
+  font-size: 1rem;
+  color: var(--primary-text);
+  margin: 1.25rem 0 0.4rem;
+}
+
+.modal-body p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.25rem;
+}
+
+.modal-body a {
+  color: var(--primary-text);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--primary-text);
+}
+
+@media (max-width: 700px) {
+  .modal-box { padding: 2rem 1.25rem 1.5rem; }
 }
