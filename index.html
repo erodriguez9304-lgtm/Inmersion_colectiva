@@ -3,21 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Inmersión Colectiva | Terapia Psicológica</title>
+
+  <!-- Aplica el tema guardado (o el del sistema, en modo automático) antes de
+       pintar la página, para evitar un parpadeo claro↔oscuro al cargar. -->
+  <script>
+  (function () {
+      try {
+          var KEY = "ic_theme";
+          var ORDER = ["light", "dark", "auto"];
+          var stored = localStorage.getItem(KEY);
+          var pref = ORDER.indexOf(stored) !== -1 ? stored : "auto";
+          var effective = pref === "auto"
+              ? (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+              : pref;
+          document.documentElement.setAttribute("data-theme", effective);
+          document.documentElement.setAttribute("data-theme-pref", pref);
+      } catch (e) { /* almacenamiento no disponible: se queda con el claro por defecto */ }
+  })();
+  </script>
+
+  <title data-section="meta" data-value="title">Inmersión Colectiva | Terapia Psicológica</title>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48x48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-  <meta name="description" content="Atrévete a experimentar la verdadera libertad. Espacio dirigido a la psicología, con acompañamiento seguro, profesional, confidencial y adaptable a tus objetivos.">
+  <meta name="description" data-section="meta" data-value="description" content="Atrévete a experimentar la verdadera libertad. Espacio dirigido a la psicología, con acompañamiento seguro, profesional, confidencial y adaptable a tus objetivos.">
   <meta name="keywords" content="terapia psicologica, psicologo clinico, salud mental, terapia de pareja, terapia individual, Tultitlán">
   <meta name="author" content="Inmersión Colectiva">
-  
+
   <!-- Preconnect para fuentes y Google Maps -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  
+
   <!-- CSS principal -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -29,16 +48,28 @@
       <!-- Logotipo del cliente: icono de manos+Ψ, texto "TERAPIA PSICOLÓGICA" y sello circular "Inmersión Colectiva" -->
       <div class="logo-container">
         <img src="assets/img/logo-terapia-psicologica.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-hands">
-        <span class="logo-text-terapia">TERAPIA<br>PSICOLÓGICA</span>
+        <span class="logo-text-terapia" data-section="header" data-value="logoText">TERAPIA<br>PSICOLÓGICA</span>
         <img src="assets/img/logo-inmersion-colectiva.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-eclipse">
       </div>
       <nav>
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#proceso" class="nav-link">Proceso</a>
-        <a href="#ubicacion" class="nav-link">Ubicación</a>
-        <a href="#blog" class="nav-link">Blog</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="#inicio" class="nav-link" data-section="nav" data-value="inicio">Inicio</a>
+        <a href="#servicios" class="nav-link" data-section="nav" data-value="servicios">Servicios</a>
+        <a href="#proceso" class="nav-link" data-section="nav" data-value="proceso">Proceso</a>
+        <a href="#ubicacion" class="nav-link" data-section="nav" data-value="ubicacion">Ubicación</a>
+        <a href="#blog" class="nav-link" data-section="nav" data-value="blog">Blog</a>
+        <a href="#contacto" class="nav-link" data-section="nav" data-value="contacto">Contacto</a>
+        <span class="lang-selector" role="group" aria-label="Cambiar idioma">
+          <button type="button" class="lang-btn is-active" data-lang="es" aria-pressed="true">ES</button>
+          <span class="lang-divider" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </span>
+        <span class="theme-selector">
+          <button type="button" class="theme-toggle" data-theme-state="auto" aria-label="Cambiar tema">
+            <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="icon-dark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="icon-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"></path></svg>
+          </button>
+        </span>
       </nav>
     </div>
   </header>
@@ -48,21 +79,21 @@
     <section id="inicio" class="hero">
       <div class="container hero-grid">
         <div class="hero-text">
-          <span class="hero-badge">Ψ Consulta Clínica Especializada</span>
-          <p class="hero-slogan">"Atrévete a experimentar la verdadera libertad"</p>
-          <h1>Un espacio seguro para tu <span class="highlight">bienestar emocional</span></h1>
-          <p>Un espacio dirigido a la psicología, en el que te acompañaremos de principio a fin en todas esas etapas difíciles de la vida, siguiendo métodos comprobados y adaptándonos a tus objetivos.</p>
+          <span class="hero-badge" data-section="hero" data-value="badge">Ψ Consulta Clínica Especializada</span>
+          <p class="hero-slogan" data-section="hero" data-value="slogan">"Atrévete a experimentar la verdadera libertad"</p>
+          <h1 data-section="hero" data-value="title">Un espacio seguro para tu <span class="highlight">bienestar emocional</span></h1>
+          <p data-section="hero" data-value="desc">Un espacio dirigido a la psicología, en el que te acompañaremos de principio a fin en todas esas etapas difíciles de la vida, siguiendo métodos comprobados y adaptándonos a tus objetivos.</p>
 
           <div class="hero-buttons">
             <!-- Botón de WhatsApp Incrustado -->
             <a href="https://wa.me/525625572365?text=Hola,%20quiero%20agendar%20una%20sesión%20psicológica%20inicial." class="btn btn-primary" target="_blank">
-              📲 Agendar por WhatsApp
+              <span data-section="hero" data-value="btnAgendar">📲 Agendar por WhatsApp</span>
             </a>
             <!-- Botón de Llamada Incrustado -->
             <a href="tel:+525625572365" class="btn btn-secondary" style="background:#1e3a8a;">
-              📞 Llamar ahora
+              <span data-section="hero" data-value="btnLlamar">📞 Llamar ahora</span>
             </a>
-            <a href="#servicios" class="btn btn-secondary" style="background:#0d9488;">Ver enfoques →</a>
+            <a href="#servicios" class="btn btn-secondary" style="background:#0d9488;" data-section="hero" data-value="btnEnfoques">Ver enfoques →</a>
           </div>
 
           <!-- Redes Sociales Incrustadas en Hero -->
@@ -72,10 +103,10 @@
           </div>
 
           <div class="trust-badges">
-            <span>🛡️ Seguro</span>
-            <span>🎓 Profesional</span>
-            <span>🔒 Confidencial</span>
-            <span>🔄 Adaptable</span>
+            <span data-section="hero" data-value="trust1">🛡️ Seguro</span>
+            <span data-section="hero" data-value="trust2">🎓 Profesional</span>
+            <span data-section="hero" data-value="trust3">🔒 Confidencial</span>
+            <span data-section="hero" data-value="trust4">🔄 Adaptable</span>
           </div>
         </div>
         <div class="hero-image hero-image-placeholder">
@@ -102,38 +133,38 @@
     <!-- Sección de Servicios destacados -->
     <section id="servicios" class="products-showcase">
       <div class="container">
-        <h2 class="section-title">Ψ Modalidades de Intervención</h2>
+        <h2 class="section-title" data-section="services" data-value="title">Ψ Modalidades de Intervención</h2>
         <div class="products-grid-landing">
           <div class="product-card-landing">
             <div class="product-icon">🧠</div>
-            <h3>Terapia Individual</h3>
-            <p>Acompañamiento personal para procesar, entender y transformar tus momentos de crisis o crecimiento.</p>
+            <h3 data-section="services" data-value="s1Title">Terapia Individual</h3>
+            <p data-section="services" data-value="s1Desc">Acompañamiento personal para procesar, entender y transformar tus momentos de crisis o crecimiento.</p>
           </div>
           <div class="product-card-landing">
             <div class="product-icon">📚</div>
-            <h3>Terapia de Aprendizaje</h3>
-            <p>Herramientas y estrategias para dificultades y procesos de aprendizaje.</p>
+            <h3 data-section="services" data-value="s2Title">Terapia de Aprendizaje</h3>
+            <p data-section="services" data-value="s2Desc">Herramientas y estrategias para dificultades y procesos de aprendizaje.</p>
           </div>
           <div class="product-card-landing">
             <div class="product-icon">👥</div>
-            <h3>Terapia de Pareja</h3>
-            <p>Resolución de conflictos, reestructuración de la comunicación y acuerdos saludables.</p>
+            <h3 data-section="services" data-value="s3Title">Terapia de Pareja</h3>
+            <p data-section="services" data-value="s3Desc">Resolución de conflictos, reestructuración de la comunicación y acuerdos saludables.</p>
           </div>
           <div class="product-card-landing">
             <div class="product-icon">🧩</div>
-            <h3>Terapia para Neurodivergencias</h3>
-            <p>Atención adaptada a las necesidades de personas neurodivergentes.</p>
+            <h3 data-section="services" data-value="s4Title">Terapia para Neurodivergencias</h3>
+            <p data-section="services" data-value="s4Desc">Atención adaptada a las necesidades de personas neurodivergentes.</p>
           </div>
           <div class="product-card-landing product-card-mas">
             <div class="product-icon">✨</div>
-            <h3>Y mucho más</h3>
-            <p>Consulta por WhatsApp para conocer el resto de las modalidades disponibles.</p>
+            <h3 data-section="services" data-value="s5Title">Y mucho más</h3>
+            <p data-section="services" data-value="s5Desc">Consulta por WhatsApp para conocer el resto de las modalidades disponibles.</p>
           </div>
         </div>
         <div class="text-center" style="margin-top: 2rem;">
           <!-- Botón Incrustado secundario para WhatsApp -->
           <a href="https://wa.me/525625572365?text=Hola,%20necesito%20información%20sobre%20costos%20y%20horarios%20disponibles." class="btn btn-outline" target="_blank">
-            📋 Consultar horarios y costos por WhatsApp
+            <span data-section="services" data-value="btnConsultar">📋 Consultar horarios y costos por WhatsApp</span>
           </a>
         </div>
       </div>
@@ -142,27 +173,27 @@
     <!-- ¿Cómo es el proceso? -->
     <section id="proceso" class="process-section">
       <div class="container">
-        <h2 class="section-title">¿Cómo es el proceso?</h2>
+        <h2 class="section-title" data-section="process" data-value="title">¿Cómo es el proceso?</h2>
         <div class="process-grid">
           <div class="process-card">
             <div class="process-icon">🗓️</div>
-            <h3>Sesiones semanales</h3>
-            <p>Aproximadamente 1 hora por sesión (podría llegar a ser un poco más).</p>
+            <h3 data-section="process" data-value="p1Title">Sesiones semanales</h3>
+            <p data-section="process" data-value="p1Desc">Aproximadamente 1 hora por sesión (podría llegar a ser un poco más).</p>
           </div>
           <div class="process-card">
             <div class="process-icon">💬</div>
-            <h3>Costo personalizado</h3>
-            <p>Se define en base a un estudio socioeconómico, mediante una llamada de aprox. 15 a 20 min.</p>
+            <h3 data-section="process" data-value="p2Title">Costo personalizado</h3>
+            <p data-section="process" data-value="p2Desc">Se define en base a un estudio socioeconómico, mediante una llamada de aprox. 15 a 20 min.</p>
           </div>
           <div class="process-card">
             <div class="process-icon">🌐</div>
-            <h3>Presencial o en línea</h3>
-            <p>Casos excepcionales de terapia a domicilio: pregunta por disponibilidad.</p>
+            <h3 data-section="process" data-value="p3Title">Presencial o en línea</h3>
+            <p data-section="process" data-value="p3Desc">Casos excepcionales de terapia a domicilio: pregunta por disponibilidad.</p>
           </div>
           <div class="process-card">
             <div class="process-icon">🔀</div>
-            <h3>Metodología ecléctica</h3>
-            <p>Adaptada a tu necesidad particular, combinando distintos enfoques comprobados.</p>
+            <h3 data-section="process" data-value="p4Title">Metodología ecléctica</h3>
+            <p data-section="process" data-value="p4Desc">Adaptada a tu necesidad particular, combinando distintos enfoques comprobados.</p>
           </div>
         </div>
       </div>
@@ -171,9 +202,9 @@
     <!-- Blog y Noticias -->
     <section id="blog" class="blog-section">
       <div class="container">
-        <h2 class="section-title">📰 Blog y Noticias</h2>
+        <h2 class="section-title" data-section="blog" data-value="title">📰 Blog y Noticias</h2>
         <div class="blog-placeholder">
-          <p>Muy pronto compartiremos artículos y noticias sobre salud mental en este espacio.</p>
+          <p data-section="blog" data-value="placeholder">Muy pronto compartiremos artículos y noticias sobre salud mental en este espacio.</p>
         </div>
       </div>
     </section>
@@ -181,24 +212,24 @@
     <!-- Ubicación + mapa -->
     <section id="ubicacion" class="location-section">
       <div class="container">
-        <h2 class="section-title">📍 Ubicación del Consultorio</h2>
-        
+        <h2 class="section-title" data-section="location" data-value="title">📍 Ubicación del Consultorio</h2>
+
         <div class="location-grid">
           <div class="location-info">
             <div class="address-card">
-              <p><strong>Dirección del Consultorio:</strong><br>
+              <p data-section="location" data-value="address"><strong>Dirección del Consultorio:</strong><br>
               Av. de las Torres 35, Colonia Ciudad Labor, Tultitlán, Edo. Méx.</p>
-              <p><strong>Horario de Consultas:</strong><br>
+              <p data-section="location" data-value="hours"><strong>Horario de Consultas:</strong><br>
               Lunes a Viernes: 8:00 am - 8:00 pm<br>
               Sábados: 9:00 am - 2:00 pm<br>
               Domingo: Previa programación urgente</p>
-              <p><strong>📞 Canales Directos:</strong><br>
-              📱 Teléfono: 56 2557 2365<br>
-              💬 <a href="https://wa.me/525625572365" target="_blank">WhatsApp directo</a></p>
-              <p><strong>Responsable:</strong><br>
+              <p><strong data-section="location" data-value="channelsLabel">📞 Canales Directos:</strong><br>
+              <span data-section="location" data-value="phoneLine">📱 Teléfono: 56 2557 2365</span><br>
+              💬 <a href="https://wa.me/525625572365" target="_blank" data-section="location" data-value="waDirecto">WhatsApp directo</a></p>
+              <p><strong data-section="location" data-value="responsableLabel">Responsable:</strong><br>
               Lic. Josué Christopher Enriquez Licea<br>
               Céd. Prof. 14058083</p>
-              <a href="https://maps.app.goo.gl/Nt8LB7651RZW3hwRA" class="btn btn-small" target="_blank">🗺️ Ver en Google Maps</a>
+              <a href="https://maps.app.goo.gl/Nt8LB7651RZW3hwRA" class="btn btn-small" target="_blank" data-section="location" data-value="verMapa">🗺️ Ver en Google Maps</a>
             </div>
           </div>
 
@@ -221,18 +252,18 @@
     <!-- Redes Sociales y WhatsApp Final -->
     <section id="contacto" class="contact-cta">
       <div class="container cta-card">
-        <h2>¿Necesitas orientación clínica inmediata?</h2>
-        <p>Escríbenos directamente para asignarte un espacio prioritario con total confidencialidad.</p>
-        
+        <h2 data-section="contact" data-value="title">¿Necesitas orientación clínica inmediata?</h2>
+        <p data-section="contact" data-value="desc">Escríbenos directamente para asignarte un espacio prioritario con total confidencialidad.</p>
+
         <!-- Botón WA Largo Incrustado -->
         <a href="https://wa.me/525625572365?text=Hola,%20necesito%20coordinar%20una%20atención%20psicológica%20urgente." class="btn btn-wa-large" target="_blank">
-          💬 ¡Iniciar Conversación por WhatsApp!
+          <span data-section="contact" data-value="btnIniciar">💬 ¡Iniciar Conversación por WhatsApp!</span>
         </a>
 
         <!-- Botones Redes Sociales Secundarias -->
         <div class="social-footer-buttons" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
-          <a href="https://www.facebook.com/profile.php?id=100068959985123" class="btn btn-outline" style="color: white; border-color: white;" target="_blank">📘 Seguir en Facebook</a>
-          <a href="https://instagram.com" class="btn btn-outline" style="color: white; border-color: white;" target="_blank">📸 Seguir en Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=100068959985123" class="btn btn-outline" style="color: white; border-color: white;" target="_blank" data-section="contact" data-value="btnFacebook">📘 Seguir en Facebook</a>
+          <a href="https://instagram.com" class="btn btn-outline" style="color: white; border-color: white;" target="_blank" data-section="contact" data-value="btnInstagram">📸 Seguir en Instagram</a>
         </div>
       </div>
     </section>
@@ -245,26 +276,26 @@
           <img src="assets/img/logo-terapia-psicologica.png" alt="Terapia Psicológica" class="logo-icon logo-icon-hands">
           <img src="assets/img/logo-inmersion-colectiva.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-eclipse">
         </div>
-        <p>Acompañamiento profesional y ético para tu salud mental.</p>
+        <p data-section="footer" data-value="tagline">Acompañamiento profesional y ético para tu salud mental.</p>
         <p class="footer-credential">Lic. Josué Christopher Enriquez Licea &middot; Céd. Prof. 14058083</p>
       </div>
       <div>
-        <h4>Enlaces de Navegación</h4>
+        <h4 data-section="footer" data-value="navTitle">Enlaces de Navegación</h4>
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios Clínicos</a></li>
-          <li><a href="#proceso">Proceso</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="#inicio" data-section="nav" data-value="inicio">Inicio</a></li>
+          <li><a href="#servicios" data-section="footer" data-value="serviciosClinicos">Servicios Clínicos</a></li>
+          <li><a href="#proceso" data-section="nav" data-value="proceso">Proceso</a></li>
+          <li><a href="#blog" data-section="nav" data-value="blog">Blog</a></li>
+          <li><a href="#ubicacion" data-section="nav" data-value="ubicacion">Ubicación</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contacto</h4>
-        <p>📞 Teléfono: 56 2557 2365<br>💬 <a href="https://wa.me/525625572365" target="_blank">WhatsApp</a><br>✉️ contacto@inmersioncolectiva.com</p>
+        <h4 data-section="footer" data-value="contactoTitle">Contacto</h4>
+        <p><span data-section="footer" data-value="telefono">📞 Teléfono: 56 2557 2365</span><br>💬 <a href="https://wa.me/525625572365" target="_blank">WhatsApp</a><br>✉️ contacto@inmersioncolectiva.com</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Inmersión Colectiva - Terapia Psicológica. Todos los derechos reservados.</p>
+      <p data-section="footer" data-value="rights">© 2026 Inmersión Colectiva - Terapia Psicológica. Todos los derechos reservados.</p>
     </div>
   </footer>
 
@@ -272,7 +303,7 @@
   <a href="https://wa.me/525625572365?text=Hola,%20vi%20la%20página%20de%20Inmersión%20Colectiva%20y%20me%20gustaría%20solicitar%20información." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
-  
+
   <!-- Lightbox para la galería -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
