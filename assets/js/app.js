@@ -368,6 +368,22 @@ function initMobileNav() {
       toggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Cierra el menú al hacer clic fuera de él (fuera del botón y de la lista)
+  document.addEventListener('click', (e) => {
+    if (!links.classList.contains('is-open')) return;
+    if (links.contains(e.target) || toggle.contains(e.target)) return;
+    links.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+
+  // Cierra el menú con la tecla Escape, y regresa el foco al botón
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || !links.classList.contains('is-open')) return;
+    links.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.focus();
+  });
 }
 
 /* ==========================================================
