@@ -65,7 +65,11 @@ const texts = {
     },
     blog: {
       title: "📰 Blog y Noticias",
-      placeholder: "Muy pronto compartiremos artículos y noticias sobre salud mental en este espacio."
+      placeholder: "Muy pronto compartiremos artículos y noticias sobre salud mental en este espacio.",
+      post1Tag: "Psicología",
+      post1Title: "El ego como un aliado en el desarrollo de la identidad",
+      post1Excerpt: '¿Por qué se nos enseña a desconfiar del "ego"? Un recorrido por Nietzsche, Kahneman y Erich Fromm sobre el equilibrio entre el yo y el otro.',
+      post1Cta: "Leer artículo →"
     },
     location: {
       title: "📍 Ubicación del Consultorio",
@@ -168,7 +172,11 @@ const texts = {
     },
     blog: {
       title: "📰 Blog & News",
-      placeholder: "We'll soon be sharing articles and news about mental health here."
+      placeholder: "We'll soon be sharing articles and news about mental health here.",
+      post1Tag: "Psychology",
+      post1Title: "The ego as an ally in identity development",
+      post1Excerpt: 'Why are we taught to distrust the "ego"? A look at Nietzsche, Kahneman and Erich Fromm on balancing the self and the other.',
+      post1Cta: "Read article →"
     },
     location: {
       title: "📍 Practice Location",

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <script>
+  (function () {
+      try {
+          var KEY = "ic_theme";
+          var ORDER = ["light", "dark", "auto"];
+          var stored = localStorage.getItem(KEY);
+          var pref = ORDER.indexOf(stored) !== -1 ? stored : "auto";
+          var effective = pref === "auto"
+              ? (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+              : pref;
+          document.documentElement.setAttribute("data-theme", effective);
+          document.documentElement.setAttribute("data-theme-pref", pref);
+      } catch (e) { /* almacenamiento no disponible: se queda con el claro por defecto */ }
+  })();
+  </script>
+
+  <title>El ego como un aliado en el desarrollo de la identidad | Inmersión Colectiva</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="../assets/img/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+  <meta name="description" content="El ego como un aliado en el desarrollo de la identidad: un recorrido por Nietzsche, Kahneman y Erich Fromm sobre el equilibrio entre el yo y el otro, por Lic. Josué Christopher Enriquez Licea.">
+  <meta name="keywords" content="psicologia, ego, identidad, salud mental, Inmersion Colectiva, Tultitlan">
+  <meta name="author" content="Lic. Josué Christopher Enriquez Licea">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="landing-header">
+    <div class="container header-flex">
+      <div class="logo-container">
+        <img src="../assets/img/logo-terapia-psicologica.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-hands">
+        <span class="logo-text-terapia">TERAPIA<br>PSICOLÓGICA</span>
+        <img src="../assets/img/logo-inmersion-colectiva.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-eclipse">
+      </div>
+      <nav>
+        <ul class="nav-links" style="position:static; flex-direction:row; background:transparent; box-shadow:none; padding:0;">
+          <li><a href="../index.html#blog" class="nav-link">← Volver al blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="article-section">
+      <div class="container">
+        <a href="../index.html#blog" class="article-back">← Volver a Inmersión Colectiva</a>
+
+        <div class="article-header">
+          <span class="blog-card-tag">Psicología</span>
+          <h1>El ego como un aliado en el desarrollo de la identidad</h1>
+          <p class="article-meta">Por Lic. Josué Christopher Enriquez Licea · Céd. Prof. 14058083</p>
+        </div>
+
+        <div class="article-body">
+          <p class="article-lead">Cuántas veces no hemos escuchado "no seas egoísta" o "qué egocéntrico", tachando al "ego" como una especie de mal consejero, un rival, un enemigo, convirtiendo en un terreno minado todo lo que tenga que ver con ese sujeto que, de una manera muy directa, sigues siendo tú…</p>
+
+          <p>En psicología, una de las primeras nociones con las que te recibe esta ciencia es el concepto del yo, la personalidad, la teoría del desarrollo biopsicosocial o como le quieras llamar: todos son intentos de comprender un sistema complejo que, si lo abordamos desde la censura, hace que esa voz interior pierda fuerza y presencia en la toma de decisiones. Nietzsche, en su filosofía existencialista, planteaba un concepto interesante al que llamó "la moral de esclavos", una cualidad de las sociedades que termina debilitando al yo. Aunque su planteamiento tenía cierta violencia, dejaba claro que el yo es un fenómeno que ocurre dentro de un contexto social —un fenómeno que ocurre en el reflejo del otro—, por lo que un enfoque enteramente centrado en complacer la opinión general, una tendencia colectivista, termina siendo un riesgo para la integridad del ser, ya que puede diluir su verdadera esencia. Aunque, del lado del individualismo, tampoco se puede esperar mucho la verdad…</p>
+
+          <p>Daniel Kahneman, psicólogo social, argumentaba en su libro ganador del premio Nobel, <em>Pensar rápido, pensar despacio</em>, que la mente humana suele mantenerse en dos modelos de procesamiento cognitivo. Uno de ritmo más pausado, meditativo y precavido, se encuentra en sociedades con un enfoque colectivista, lo que permite mayor seguridad, aunque deja desamparado al yo de capacidades de autosostenibilidad. La consecuencia: una inseguridad latente en los actos propios y decisiones con ausencia de satisfacción, un sentimiento que ancla nuestras vidas a una excesiva precaución e inseguridad en contextos donde estos recursos son, simplemente, invaluables.</p>
+
+          <p>También existe un procesamiento más catalizante, con tintes intuitivos y emocionales, que permite una sociedad que incentiva ideas de autopreservación con mayor presencia, aunque convirtiéndola en una especie de islas independientes, limitadas en recursos sociales y personales. En estos sistemas termina siendo una condena silenciosa para esas culturas, pues provocan consecuencias tanto psicológicas como sociales que las vuelven inviables para la condición humana —el animal político—: temas como el suicidio, el abandono de la familia, raíces ausentes en el entendido de la base de una personalidad, y un sinfín de fenómenos psicológicos que terminan degenerando la idea de personalidad o yo.</p>
+
+          <p><strong>Al final, ¿qué nos queda?</strong> En un mundo donde la idea del yo se asocia con cualidades que entendemos como negativas, y donde el otro extremo nos convierte en parte de un grupo que coarta nuestra libertad de decisión y acción, sacrificando aspectos fundamentales, desde Grecia y Erich Fromm nos llega una visión con algo de esperanza. Existe una noción de 8 conceptos distintos que los antiguos pensadores griegos usaban para definir el amor: <em>Eros</em> (pasión física y deseo), <em>Philia</em> (amistad profunda y lealtad), <em>Ágape</em> (amor universal y compasivo), <em>Storge</em> (afecto familiar y protector), <em>Pragma</em> (compromiso maduro a largo plazo), <em>Ludus</em> (coqueteo y diversión sin ataduras), <em>Manía</em> (obsesión, dependencia y celos) y, por último, el que Erich Fromm define ampliamente como amor propio o <em>Philautia</em>: autoestima y cuidado personal.</p>
+
+          <p>En este último concepto encontramos una idea interesante: una prioridad en el crecimiento personal, la capacidad de experimentar las distintas cualidades y capacidades del ser, entender sus propios alcances y posibilidades. Es una especie de comprensión y dedicación personal que termina provocando en el individuo una armonía que, gracias a la inclinación hacia un ego regulado, le da al menos una oportunidad para liberarse de las ataduras que formaban parte de esa opresión que frustraba su existencia…</p>
+
+          <p>Aunque, a decir verdad, la libertad es un problema más grande. Ciertamente… pero bueno, un problema más divertido, quizás.</p>
+        </div>
+
+        <div class="article-references">
+          <h2>Referencias</h2>
+          <ul>
+            <li>Lee, John Alan. <em>Colours of Love: An Exploration of the Ways of Loving</em> (1973).</li>
+            <li>Fromm, Erich. <em>El arte de amar</em>.</li>
+            <li>Kahneman, Daniel. <em>Pensar rápido, pensar despacio</em>.</li>
+            <li>Nietzsche, Friedrich. <em>La genealogía de la moral</em>.</li>
+          </ul>
+        </div>
+
+        <div class="article-cta">
+          <div class="social-hero-buttons" style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-bottom:1.25rem;">
+            <a href="https://www.facebook.com/profile.php?id=100068959985123" class="btn btn-social btn-fb" target="_blank">📘 Facebook</a>
+            <a href="https://www.instagram.com/christhh1/" class="btn btn-social btn-ig" target="_blank">📸 Instagram</a>
+          </div>
+          <a href="https://wa.me/525625572365?text=Hola,%20leí%20el%20artículo%20sobre%20el%20ego%20y%20la%20identidad%20y%20quiero%20agendar%20una%20sesión." class="btn btn-primary" target="_blank">📲 Agendar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="landing-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-logo-lockup">
+          <img src="../assets/img/logo-terapia-psicologica.png" alt="Terapia Psicológica" class="logo-icon logo-icon-hands">
+          <img src="../assets/img/logo-inmersion-colectiva.png" alt="Inmersión Colectiva" class="logo-icon logo-icon-eclipse">
+        </div>
+        <p>Acompañamiento profesional y ético para tu salud mental.</p>
+        <p class="footer-credential">Lic. Josué Christopher Enriquez Licea &middot; Céd. Prof. 14058083</p>
+      </div>
+      <div>
+        <h4>Enlaces de Navegación</h4>
+        <ul>
+          <li><a href="../index.html#inicio">Inicio</a></li>
+          <li><a href="../index.html#servicios">Servicios Clínicos</a></li>
+          <li><a href="../index.html#proceso">Proceso</a></li>
+          <li><a href="../index.html#blog">Blog</a></li>
+          <li><a href="../index.html#ubicacion">Ubicación</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>📞 Teléfono: 56 2557 2365<br>💬 <a href="https://wa.me/525625572365" target="_blank">WhatsApp</a><br>✉️ contacto@inmersioncolectiva.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Inmersión Colectiva - Terapia Psicológica. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
