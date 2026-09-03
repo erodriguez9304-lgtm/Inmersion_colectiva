@@ -115,7 +115,7 @@ const texts = {
       finalidadTitle: "Finalidad",
       finalidadText: "Usamos tus datos para agendar y dar seguimiento a tus sesiones, mantener tu expediente clínico y contactarte sobre tu proceso terapéutico. Tus datos de salud están protegidos por el secreto profesional y no se comparten con terceros, salvo obligación legal.",
       arcoTitle: "Derechos ARCO",
-      arcoText: 'Puedes solicitar acceder, rectificar, cancelar u oponerte al uso de tus datos personales, incluyendo tu expediente clínico, escribiendo a <a href="mailto:contacto@inmersioncolectiva.com">contacto@inmersioncolectiva.com</a>.',
+      arcoText: 'Puedes solicitar acceder, rectificar, cancelar u oponerte al uso de tus datos personales, incluyendo tu expediente clínico, escribiendo a <a href="mailto:christopher.liccc@gmail.com">christopher.liccc@gmail.com</a>.',
       cambiosTitle: "Cambios a este aviso",
       cambiosText: "Este aviso puede actualizarse; la versión vigente siempre estará disponible en esta página."
     },
@@ -232,7 +232,7 @@ const texts = {
       finalidadTitle: "Purpose",
       finalidadText: "We use your data to schedule and follow up on your sessions, maintain your clinical record, and contact you about your therapeutic process. Your health data is protected by professional confidentiality and is not shared with third parties, except where legally required.",
       arcoTitle: "Data rights",
-      arcoText: 'You can request to access, rectify, cancel or object to the use of your personal data, including your clinical record, by writing to <a href="mailto:contacto@inmersioncolectiva.com">contacto@inmersioncolectiva.com</a>.',
+      arcoText: 'You can request to access, rectify, cancel or object to the use of your personal data, including your clinical record, by writing to <a href="mailto:christopher.liccc@gmail.com">christopher.liccc@gmail.com</a>.',
       cambiosTitle: "Changes to this notice",
       cambiosText: "This notice may be updated; the current version will always be available on this page."
     },
