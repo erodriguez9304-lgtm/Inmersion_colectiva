@@ -59,6 +59,7 @@
           <li><a href="#inicio" class="nav-link" data-section="nav" data-value="inicio">Inicio</a></li>
           <li><a href="#servicios" class="nav-link" data-section="nav" data-value="servicios">Servicios</a></li>
           <li><a href="#proceso" class="nav-link" data-section="nav" data-value="proceso">Proceso</a></li>
+          <li><a href="#testimonios" class="nav-link" data-section="nav" data-value="testimonios">Testimonios</a></li>
           <li><a href="#ubicacion" class="nav-link" data-section="nav" data-value="ubicacion">Ubicación</a></li>
           <li><a href="#blog" class="nav-link" data-section="nav" data-value="blog">Blog</a></li>
           <li><a href="#contacto" class="nav-link" data-section="nav" data-value="contacto">Contacto</a></li>
@@ -204,6 +205,40 @@
       </div>
     </section>
 
+    <!-- Testimonios: compartidos directamente por el terapeuta, ya
+         anonimizados por los propios pacientes (sin nombres). El tercero es
+         más extenso, así que se muestra recortado con un botón "Leer
+         completo" en vez de ocupar toda la tarjeta de entrada. -->
+    <section id="testimonios" class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title" data-section="testimonials" data-value="title">💬 Lo que dicen quienes ya tomaron terapia aquí</h2>
+        <p class="testimonials-note" data-section="testimonials" data-value="note">Testimonios compartidos con autorización de cada paciente. Se publican de forma anónima, sin nombres ni datos que los identifiquen.</p>
+        <div class="testimonials-grid">
+          <figure class="testimonio-card">
+            <span class="testimonio-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote data-section="testimonials" data-value="t1Quote">La experiencia que tuve con el psicólogo Chris fue realmente buena, alrededor de 2 años y cachito acompañándome en un duelo en pareja que tuve, la superación de la misma y muchísimos temas que me hubieran derrumbado de no ser porque Chris estuvo ahí. Excelente psicólogo, muy profesional, 100% recomendable.</blockquote>
+            <figcaption data-section="testimonials" data-value="t1Author">Paciente en terapia individual</figcaption>
+          </figure>
+          <figure class="testimonio-card">
+            <span class="testimonio-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote data-section="testimonials" data-value="t2Quote">Desde el día 1 me sentí totalmente acompañada, aprendí mucho sobre autoestima, límites y manejo de mis emociones; muy profesional y un gran ser humano. Actualmente mi hija es quien lleva terapia y también se siente muy en calma.</blockquote>
+            <figcaption data-section="testimonials" data-value="t2Author">Paciente en terapia individual</figcaption>
+          </figure>
+          <figure class="testimonio-card testimonio-card-larga">
+            <span class="testimonio-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote data-section="testimonials" data-value="t3Quote">Empecé a ir a terapia en un momento bastante complicado, sobre todo por la enfermedad de mi mamá. En esa etapa sentía que el peso del cuidado recaía casi por completo en mí, y la falta de apoyo de mis hermanos generó mucha tensión y desgaste. Cuando ella falleció, esa frustración se convirtió en una culpa muy difícil de manejar. Me quedaba dando vueltas a lo que pude haber hecho distinto, y también cargaba con un enojo hacia ellos que no sabía bien cómo procesar.</blockquote>
+            <div class="testimonio-more" id="testimonio3-more" hidden>
+              <p data-section="testimonials" data-value="t3Quote2">En las sesiones, una de las cosas que más me ha ayudado es aprender a distinguir de dónde viene realmente mi enojo. Me sirvió mucho eso de preguntarme si estoy enojado con la persona, con la situación o con el plan que falló. También la técnica de hacer una pausa de diez segundos antes de reaccionar me ha dado tiempo para no responder desde el impulso. Y con el tema de la culpa, el método socrático que usamos me ha permitido cuestionar esos pensamientos fatalistas, esos de "todo es mi responsabilidad" o "debí haber hecho más". Poco a poco fui entendiendo que no puedo asumir lo que mis hermanos decidieron no hacer, y eso me ha quitado un peso enorme.</p>
+              <p data-section="testimonials" data-value="t3Quote3">También hemos trabajado en otros aspectos que no tenía tan claros. Por ejemplo, lo de la imagen corporal con la cinta métrica, para confrontar lo que percibo con la realidad, y los ejercicios de salto y anagramas para la memoria, que parecen simples pero sí noto la diferencia. Revisamos varios rasgos como los obsesivos, paranoides o histriónicos, y en su mayoría se fueron trabajando, lo cual me dio tranquilidad.</p>
+              <p data-section="testimonials" data-value="t3Quote4">Hoy en día estoy más enfocado en construir mi propio camino, en aprender cosas nuevas, en atreverme a socializar y en poner límites sin sentir que el mundo se me cae si los demás no responden como espero. Sigo en proceso, pero la diferencia es que ahora el enojo y la culpa ya no me paralizan. Me ha ayudado bastante tener este espacio para ordenar mis ideas y sentir que avanzo, aunque sea de a poco.</p>
+            </div>
+            <button type="button" class="testimonio-toggle" data-testimonio-toggle="testimonio3-more" aria-expanded="false" aria-controls="testimonio3-more" data-section="testimonials" data-value="t3ReadMore">Leer completo →</button>
+            <figcaption data-section="testimonials" data-value="t3Author">Paciente en terapia individual</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- Blog y Noticias -->
     <section id="blog" class="blog-section">
       <div class="container">
@@ -296,6 +331,7 @@
           <li><a href="#inicio" data-section="nav" data-value="inicio">Inicio</a></li>
           <li><a href="#servicios" data-section="footer" data-value="serviciosClinicos">Servicios Clínicos</a></li>
           <li><a href="#proceso" data-section="nav" data-value="proceso">Proceso</a></li>
+          <li><a href="#testimonios" data-section="nav" data-value="testimonios">Testimonios</a></li>
           <li><a href="#blog" data-section="nav" data-value="blog">Blog</a></li>
           <li><a href="#ubicacion" data-section="nav" data-value="ubicacion">Ubicación</a></li>
         </ul>

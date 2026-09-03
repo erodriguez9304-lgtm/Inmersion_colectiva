@@ -21,6 +21,7 @@ const texts = {
       inicio: "Inicio",
       servicios: "Servicios",
       proceso: "Proceso",
+      testimonios: "Testimonios",
       ubicacion: "Ubicación",
       blog: "Blog",
       contacto: "Contacto"
@@ -70,6 +71,15 @@ const texts = {
       post1Title: "El ego como un aliado en el desarrollo de la identidad",
       post1Excerpt: '¿Por qué se nos enseña a desconfiar del "ego"? Un recorrido por Nietzsche, Kahneman y Erich Fromm sobre el equilibrio entre el yo y el otro.',
       post1Cta: "Leer artículo →"
+    },
+    testimonials: {
+      title: "💬 Lo que dicen quienes ya tomaron terapia aquí",
+      note: "Testimonios compartidos con autorización de cada paciente. Se publican de forma anónima, sin nombres ni datos que los identifiquen.",
+      t1Author: "Paciente en terapia individual",
+      t2Author: "Paciente en terapia individual",
+      t3Author: "Paciente en terapia individual",
+      t3ReadMore: "Leer completo →",
+      t3ReadLess: "Leer menos"
     },
     location: {
       title: "📍 Ubicación del Consultorio",
@@ -128,6 +138,7 @@ const texts = {
       inicio: "Home",
       servicios: "Services",
       proceso: "Process",
+      testimonios: "Testimonials",
       ubicacion: "Location",
       blog: "Blog",
       contacto: "Contact"
@@ -177,6 +188,15 @@ const texts = {
       post1Title: "The ego as an ally in identity development",
       post1Excerpt: 'Why are we taught to distrust the "ego"? A look at Nietzsche, Kahneman and Erich Fromm on balancing the self and the other.',
       post1Cta: "Read article →"
+    },
+    testimonials: {
+      title: "💬 What people say after therapy here",
+      note: "Testimonials shared with each patient's authorization, published anonymously with no names or identifying details. They appear below in the original Spanish in which patients wrote them.",
+      t1Author: "Patient, individual therapy",
+      t2Author: "Patient, individual therapy",
+      t3Author: "Patient, individual therapy",
+      t3ReadMore: "Read the full testimonial →",
+      t3ReadLess: "Read less"
     },
     location: {
       title: "📍 Practice Location",
@@ -428,11 +448,34 @@ function initPrivacyModal() {
   });
 }
 
+/* ==========================================================
+   3.5 TESTIMONIOS — expandir el testimonio más largo
+   ========================================================== */
+function initTestimonials() {
+  document.querySelectorAll('[data-testimonio-toggle]').forEach((btn) => {
+    const target = document.getElementById(btn.dataset.testimonioToggle);
+    if (!target) return;
+
+    btn.addEventListener('click', () => {
+      const expanding = target.hidden;
+      target.hidden = !expanding;
+      btn.setAttribute('aria-expanded', String(expanding));
+
+      const lang = document.documentElement.lang || 'es';
+      const labels = (texts[lang] && texts[lang].testimonials) || texts.es.testimonials;
+      const key = expanding ? 't3ReadLess' : 't3ReadMore';
+      btn.dataset.value = key;
+      btn.textContent = labels[key] || labels.t3ReadMore;
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLang();
   initMobileNav();
   initPrivacyModal();
+  initTestimonials();
 
   // Renderizar galería de fotos de forma dinámica en el grid
   // (actualmente desactivada en el HTML hasta que existan fotos reales)
