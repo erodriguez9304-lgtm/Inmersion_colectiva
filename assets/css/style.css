@@ -345,7 +345,9 @@ nav {
 
 .btn-primary {
   background: #25D366; /* Verde Oficial WhatsApp */
-  color: white;
+  /* Texto oscuro, no blanco: sobre este verde el blanco daba 1.98:1 y
+     WCAG AA pide 4.5:1. Con #0b1f14 el contraste sube a ~9.4:1. */
+  color: #0b1f14;
   box-shadow: var(--shadow-sm);
 }
 
@@ -1175,4 +1177,15 @@ nav {
 
 @media (max-width: 700px) {
   .modal-box { padding: 2rem 1.25rem 1.5rem; }
+}
+
+/* Respeta a quien pidió menos movimiento en su sistema operativo. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

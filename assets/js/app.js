@@ -58,7 +58,7 @@ const texts = {
       p1Title: "Sesiones semanales",
       p1Desc: "Aproximadamente 1 hora por sesión (podría llegar a ser un poco más).",
       p2Title: "Costo personalizado",
-      p2Desc: "Se define en base a un estudio socioeconómico, mediante una llamada de aprox. 15 a 20 min.",
+      p2Desc: "Se define con base en un estudio socioeconómico, mediante una llamada de aprox. 15 a 20 min.",
       p3Title: "Presencial o en línea",
       p3Desc: "Casos excepcionales de terapia a domicilio: pregunta por disponibilidad.",
       p4Title: "Metodología ecléctica",
@@ -474,8 +474,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLang();
   initMobileNav();
-  initPrivacyModal();
   initTestimonials();
+  initPrivacyModal();
 
   // Renderizar galería de fotos de forma dinámica en el grid
   // (actualmente desactivada en el HTML hasta que existan fotos reales)
@@ -487,35 +487,48 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Funciones lógicas del Lightbox
+// Funciones del lightbox.
+// Todas comprueban que los elementos existan: este mismo archivo se carga en
+// páginas sin galería (p. ej. tienda.html), y ahí el listener global de
+// teclado disparaba un TypeError con cada Escape o flecha.
 function openLightbox(index) {
-  currentIndex = index;
   const lightbox = document.getElementById('lightbox');
   const img = document.getElementById('lightbox-img');
   const counter = document.getElementById('lightbox-counter');
+  if (!lightbox || !img || !counter) return;
 
+  currentIndex = index;
   img.src = `assets/img/${fotos[currentIndex]}`;
   counter.textContent = `${currentIndex + 1} / ${fotos.length}`;
   lightbox.style.display = 'flex';
 }
 
 function closeLightbox() {
-  document.getElementById('lightbox').style.display = 'none';
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox) lightbox.style.display = 'none';
 }
 
 function changeImage(direction) {
+  const img = document.getElementById('lightbox-img');
+  const counter = document.getElementById('lightbox-counter');
+  if (!img || !counter) return;
+
   currentIndex += direction;
   if (currentIndex < 0) currentIndex = fotos.length - 1;
   if (currentIndex >= fotos.length) currentIndex = 0;
 
-  const img = document.getElementById('lightbox-img');
-  const counter = document.getElementById('lightbox-counter');
   img.src = `assets/img/${fotos[currentIndex]}`;
   counter.textContent = `${currentIndex + 1} / ${fotos.length}`;
 }
 
 // Navegación rápida con teclado
 document.addEventListener('keydown', (e) => {
+  // Solo mientras el visor está abierto: antes, cualquier Escape o flecha en la
+  // página (por ejemplo al hacer scroll con el teclado) disparaba el visor y
+  // pedía imágenes que no existen.
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || lightbox.style.display !== 'flex') return;
+
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowLeft') changeImage(-1);
   if (e.key === 'ArrowRight') changeImage(1);
